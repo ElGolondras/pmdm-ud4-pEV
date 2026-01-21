@@ -79,7 +79,7 @@ fun ImagesPracticeScreen(navController: NavController) {
             Button(onClick = {
                 navController.navigate("audio1")
             }) {
-                Text(text = "Podcast")
+                Text(text = "Documental")
             }
         }
 
@@ -121,7 +121,7 @@ fun ImagesPracticeScreen(navController: NavController) {
             Button(onClick = {
                 navController.navigate("audio2")
             }) {
-                Text(text = "Podcast")
+                Text(text = "Documental")
             }
         }
 
@@ -160,7 +160,7 @@ fun ImagesPracticeScreen(navController: NavController) {
             Button(onClick = {
                 navController.navigate("audio3")
             }) {
-                Text(text = "Podcast")
+                Text(text = "Documental")
             }
         }
     }

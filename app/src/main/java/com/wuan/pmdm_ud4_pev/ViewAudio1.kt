@@ -57,7 +57,7 @@ fun AudioPracticeScreen1(navController: NavHostController) {
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         Text(
-            text = "Podcast",
+            text = "Documental",
             style = MaterialTheme.typography.titleLarge,
             modifier = Modifier
                 .padding(top = 20.dp)
