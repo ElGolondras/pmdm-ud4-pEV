@@ -35,5 +35,15 @@ fun AppNavigation() {
         composable("video") {
             VideoPracticeScreen(navController = navController)
         }
+        composable("audio1") {
+            AudioPracticeScreen1(navController = navController)
+        }
+        composable("audio2") {
+            AudioPracticeScreen2(navController = navController)
+        }
+        composable("audio3") {
+            AudioPracticeScreen3(navController = navController)
+        }
+
     }
 }

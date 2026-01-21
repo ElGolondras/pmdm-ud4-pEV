@@ -77,7 +77,7 @@ fun ImagesPracticeScreen(navController: NavController) {
             Spacer(modifier = Modifier.width(12.dp))
 
             Button(onClick = {
-
+                navController.navigate("audio1")
             }) {
                 Text(text = "Podcast")
             }
@@ -119,7 +119,7 @@ fun ImagesPracticeScreen(navController: NavController) {
             Spacer(modifier = Modifier.width(12.dp))
 
             Button(onClick = {
-
+                navController.navigate("audio2")
             }) {
                 Text(text = "Podcast")
             }
@@ -158,7 +158,7 @@ fun ImagesPracticeScreen(navController: NavController) {
             Spacer(modifier = Modifier.width(12.dp))
 
             Button(onClick = {
-
+                navController.navigate("audio3")
             }) {
                 Text(text = "Podcast")
             }
