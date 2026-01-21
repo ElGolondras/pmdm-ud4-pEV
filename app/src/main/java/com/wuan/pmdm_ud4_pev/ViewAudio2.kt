@@ -6,22 +6,31 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 
 @Composable
 fun AudioPracticeScreen2(navController: NavHostController) {
     val context = LocalContext.current
+    val scrollState = rememberScrollState()
 
     val player = remember {
         MediaPlayer.create(context, R.raw.audio2)
@@ -44,7 +53,8 @@ fun AudioPracticeScreen2(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(16.dp)
+            .verticalScroll(scrollState),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         Text(
@@ -54,6 +64,20 @@ fun AudioPracticeScreen2(navController: NavHostController) {
                 .padding(top = 20.dp)
                 .fillMaxWidth(),
             textAlign = TextAlign.Center
+        )
+
+        AsyncImage(
+            model = ImageRequest.Builder(context)
+                .data("https://lumiere-a.akamaihd.net/v1/images/image_8ac3fa97.jpeg?region=0%2C0%2C540%2C810")
+                .crossfade(true)
+                .build(),
+            placeholder = painterResource(R.drawable.placeholder),
+            error = painterResource(R.drawable.error),
+            contentDescription = "Avatar: Fuego y ceniza",
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(600.dp),
+            contentScale = ContentScale.Crop
         )
 
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -93,7 +117,11 @@ fun AudioPracticeScreen2(navController: NavHostController) {
         }
 
         Button(
-            onClick = { navController.navigate("images") }) {
+            onClick = { navController.navigate("images") },
+            modifier = Modifier
+                .fillMaxWidth()
+                .align(Alignment.CenterHorizontally),
+        ) {
             Text(text = "Volver Al Inicio")
         }
     }

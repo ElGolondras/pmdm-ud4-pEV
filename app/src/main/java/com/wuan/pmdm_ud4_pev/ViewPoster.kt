@@ -57,7 +57,7 @@ fun ImagesPracticeScreen(navController: NavController) {
 
         Image(
             painter = painterResource(id = R.drawable.local_image),
-            contentDescription = "Imagen local del proyecto",
+            contentDescription = "Predator: Badlands",
             modifier = Modifier
                 .fillMaxWidth()
                 .height(600.dp),
@@ -99,7 +99,7 @@ fun ImagesPracticeScreen(navController: NavController) {
                 .build(),
             placeholder = painterResource(R.drawable.placeholder),
             error = painterResource(R.drawable.error),
-            contentDescription = "Imagen descargada desde Internet",
+            contentDescription = "Avatar: Fuego y ceniza",
             modifier = Modifier
                 .fillMaxWidth()
                 .height(600.dp),
@@ -138,7 +138,7 @@ fun ImagesPracticeScreen(navController: NavController) {
 
         Image(
             painter = painterResource(id = R.drawable.local_image2),
-            contentDescription = "Imagen local del proyecto",
+            contentDescription = "Padre no hay mas que uno 5",
             modifier = Modifier
                 .fillMaxWidth()
                 .height(600.dp),
