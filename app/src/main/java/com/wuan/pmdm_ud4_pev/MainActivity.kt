@@ -4,14 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.wuan.pmdm_ud4_pev.ui.theme.PMDMud4pEVTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +18,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             PMDMud4pEVTheme {
                 MaterialTheme {
-                    VideoPracticeScreen()
+                    AppNavigation()
                 }
             }
         }
@@ -29,17 +26,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PMDMud4pEVTheme {
-        Greeting("Android")
+fun AppNavigation() {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "images") {
+        composable("images") {
+            ImagesPracticeScreen(navController = navController)
+        }
+        composable("video") {
+            VideoPracticeScreen(navController = navController)
+        }
     }
 }

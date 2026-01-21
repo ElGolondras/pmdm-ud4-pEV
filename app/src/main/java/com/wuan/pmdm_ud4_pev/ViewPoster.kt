@@ -3,6 +3,8 @@ package com.wuan.pmdm_ud4_pev
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -10,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -21,9 +24,10 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
+import androidx.navigation.NavController
 
 @Composable
-fun ImagesPracticeScreen() {
+fun ImagesPracticeScreen(navController: NavController) {
     val context = LocalContext.current
     val scrollState = rememberScrollState()
 
@@ -60,6 +64,25 @@ fun ImagesPracticeScreen() {
             contentScale = ContentScale.Crop
         )
 
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 8.dp, bottom = 24.dp),
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Button(onClick = { navController.navigate("video") }) {
+                Text(text = "Trailer")
+            }
+
+            Spacer(modifier = Modifier.width(12.dp))
+
+            Button(onClick = {
+
+            }) {
+                Text(text = "Podcast")
+            }
+        }
+
         Text(
             text = "Avatar: Fuego y ceniza",
             style = MaterialTheme.typography.titleMedium,
@@ -83,6 +106,25 @@ fun ImagesPracticeScreen() {
             contentScale = ContentScale.Crop
         )
 
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 8.dp, bottom = 24.dp),
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Button(onClick = { navController.navigate("video") }) {
+                Text(text = "Trailer")
+            }
+
+            Spacer(modifier = Modifier.width(12.dp))
+
+            Button(onClick = {
+
+            }) {
+                Text(text = "Podcast")
+            }
+        }
+
 
 
         Text(
@@ -102,5 +144,24 @@ fun ImagesPracticeScreen() {
                 .height(600.dp),
             contentScale = ContentScale.Crop
         )
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 8.dp, bottom = 24.dp),
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Button(onClick = { navController.navigate("video") }) {
+                Text(text = "Trailer")
+            }
+
+            Spacer(modifier = Modifier.width(12.dp))
+
+            Button(onClick = {
+
+            }) {
+                Text(text = "Podcast")
+            }
+        }
     }
 }
