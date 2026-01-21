@@ -74,7 +74,10 @@ fun AudioPracticeScreen1(navController: NavHostController) {
             contentScale = ContentScale.Crop
         )
 
-        Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        ) {
             Button(
                 onClick = {
                     // Play reproduce desde la posición actual
